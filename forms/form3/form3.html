@@ -568,13 +568,73 @@
 
 
         </form>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" style="width: fit-content;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-11 col-sm-10 col-10">
+                            <label>Signature Test</label>
+                            <p style="font-size: 12px;">Place Your signeture in the canvas below</p>
+                        </div>
+                        <div class="col-md-1 col-sm-2 col-2">
+                            <span class="close">&times;</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <canvas id="sig-canvas">
+                                Get a better browser, bro.
+                            </canvas>
+                            <!-- <canvas id="sig-canvas" width="200" height="100" style="border:1px solid #000000;">
+                            </canvas> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+                            <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea id="sig-dataUrl" class="form-control"
+                                rows="5">Data URL for your signature will go here!</textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img id="sig-image" src="" alt="Your signature will go here!" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </body>
 
 </html>
+<script type="text/javascript" src="signeture/sign.js"></script>
 
 <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("signBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
     date = new Date();
     year = date.getFullYear();
     month = date.getMonth() + 1;
