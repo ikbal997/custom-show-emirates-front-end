@@ -312,33 +312,33 @@
                         <div class="card-body">
                             <h4 class="card-title">Upload Documents</h4>
                             <div class="row">
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">Driver license</button>
                                 </div>
 
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">ID number/identity</button>
                                 </div>
 
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">Vehicle license</button>
                                 </div>
                             </div>
                             <div class="row">
 
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo1</button>
                                 </div>
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo 2</button>
                                 </div>
 
-                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo 3</button>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6 col-12 mt-2 text-start">
                                     <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo 4</button>
                                 </div>
 
@@ -611,9 +611,10 @@
         </div> -->
         </form>
         <div class="row d-flex justify-content-center">
-            <button class="col-lg-2 col-xs-11 col-sm-6 mx-2 my-4 btn btn-danger" (click)="signeture()">signeture here</button>
-            <button class="col-lg-2 col-xs-12 col-sm-6 mx-2 my-4 btn btn-danger w-md waves-effect waves-light" type="submit" onclick="errorMessage()">save</button>
-        </div>
+            <button class="col-lg-2 col-11 col-sm-6 mx-2 my-4 btn btn-danger" id="signBtn">signeture here</button>
+            <button class="col-lg-2 col-11 col-sm-6 mx-2 my-4 btn btn-danger
+        w-md waves-effect waves-light" type="submit" onclick="errorMessage()">save</button>
+    </div>
 
         <div id="myModal" class="modal">
             <!-- Modal content -->
@@ -663,7 +664,7 @@
 </body>
 
 </html>
-<script type="text/javascript" src="signeture/sign.js"></script>
+<script type="text/javascript" src="../sign.js"></script>
 
 
 <script>
