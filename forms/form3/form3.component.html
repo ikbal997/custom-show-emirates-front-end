@@ -1,0 +1,714 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form For Custom Cars Competition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="form3.css">
+</head>
+
+<body>
+    <nav class="navbar" style="background-color:  #24252a;">
+        <h4 class="navbar-text my-3 mx-5 " style="color: white; text-align: center;">
+            Registration Form For Custom Cars Competition
+        </h4>
+        <p id="toDay"></p>
+    </nav>
+
+    <div class="col-lg-12">
+        <form class="needs-validation" (ngSubmit)="validSubmit()" [formGroup]="validationforms">
+
+            <div class="row">
+                <div class="card col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-3 mx-2 ">
+                    <div class="card-body">
+                        <h4 class="card-title">Personal Info</h4>
+                        <!-- <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
+            validation–available in all our supported browsers.</p> -->
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input required type="text" class="form-control" id="fullName" placeholder="Full Name">
+                                    <span id="errorFullName"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ID Number/ Identity Doc</label>
+                                    <input required type="text" class="form-control" id="identity" placeholder="ID Number/ Identity Doc">
+                                    <span id="errorIdentity"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select required class="form-control select2" id="country">
+                                      <option value="f1">Form1</option>
+                                      <option value="f2">Form2</option>
+                                      <option value="f3">Form3</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" id="validationCustom03" formControlName="city"
+                      placeholder="City" [ngClass]="{'is-invalid': submit && form.city.errors}"> -->
+                                    <span id="errorCountry"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input required type="text" class="form-control" id="city" placeholder="City">
+                                    <span id="errorCity"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile Number</label>
+                                    <input required type="number" class="form-control" id="mobile" placeholder="Mobile Number">
+                                    <span id="errorMobile"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input required type="text" class="form-control" id="email" placeholder="Email">
+                                    <span id="errorEmail"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-5 col-xl-5  col-xs-12">
+                    <div class="card col-12 mt-3 mx-1">
+                        <div class="card-body">
+                            <h4 class="card-title">Vehicle data</h4>
+                            <!-- <p class="card-title-desc">Provide valuable, actionable feedback to your users with HTML5 form
+              validation–available in all our supported browsers.</p> -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <input required type="text" class="form-control" id="category" placeholder="Category">
+                                        <span id="errorCategory"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Model</label>
+                                        <input required type="text" class="form-control" id="model" placeholder="Model">
+                                        <span id="errorModel"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Manufacturing year</label>
+                                        <input required type="text" class="form-control" id="manufacturing" placeholder="Manufacturing year">
+                                        <span id="errorManufacturing"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Club/ Work Shop / Individual</label>
+                                        <input required type="text" class="form-control" id="club" placeholder="Club / workshop">
+                                        <span id="errorClub"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="card col-12 mt-1 mx-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Participation day</h4>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="thursday">
+                                      <input type="radio" name="participation_day" required="" id="thursday" value="Thursday">Thursday
+                                    </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="friday">
+                                      <input type="radio" name="participation_day" required="" id="friday" value="Friday">Friday
+                                    </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="saturday">
+                                      <input type="radio" name="participation_day" required="" id="saturday" value="Saturday">Saturday
+                                    </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title">Main Categories</h4>
+                            <p>Please choose the category you want to participate in: </p>
+                            <div class="row mx-1">
+
+                                <div *ngFor="let carType of CarType; let i=index">
+
+                                    <input type="radio" value="carType.value" id="car_type_1">
+                                    <label class="checkbox-inline site_font_bold" style="display: inline !important;">
+                  &nbsp;{{carType.name}}&nbsp;
+                </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div class="card-body">
+                            <h4 class="card-title">Other Categories</h4>
+                            <div class="row mx-1">
+                                <div *ngFor="let carType of CarType; let i=index">
+
+                                    <input type="radio" value="carType.value" id="car_type_1">
+                                    <label class="checkbox-inline site_font_bold" style="display: inline !important;">
+                  &nbsp;{{carType.name}}&nbsp;
+                </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2 ">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Registration Documents</h4>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>1- Valid vehicle license<br>
+                  2- Valid vehicle owner ID/ Passport Copy</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title">Competition & Display Registration Fees</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="validationCustom05">≡ Normal 450 AED<br>
+                    ≡ Red Carpet 750 AED<br>
+                    ≡ VIP 2500 AED</label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2">
+
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title">Registration Timing and regulations</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="validationCustom05">- Open till march 19. 2022<br>
+                    - Competitor’s bikes entry Starts March 23.2022 10:00 AM until 11:00 PM & March 24.2022 from 10:00
+                    AM until 8:00 PM<br>
+                    - Categories will be limited to 5 Bikes, if less will be canceling the category.<br>
+                    - Participants must drive their own bikes to their designated location inside the exhibition<br>
+                    - Spare bike key to be handed over along with copies of the registration documents .<br>
+                    - Fuel tank shouldn’t exceed quarter fill<br>
+                    - The vehicle owner must be present during the arbitration and in case of absence; arbitration will
+                    be as per displayed<br>
+                    - Vehicle to departure on 27th March 2022 (After the Honoring ceremonies at 11:30 PM)<br>
+                    - Custom Show Management is not liable for any accident’s occurred at the exhibition floor .<br>
+                  </label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title">Participant Notes</h4>
+                            <div class="row">
+                                <div class="col-lg-12 pad">
+                                    <div class="form-group">
+                                        <input required type="text" name="participant Notes" id="participantNotes" class="form-control sub" style="width: 100% !important;">
+                                        <span id="errorParticipant"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title">Upload Documents</h4>
+                            <div class="row">
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">Driver
+                  license</button>
+                                </div>
+
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">ID
+                  number/identity</button>
+                                </div>
+
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">Vehicle
+                  license</button>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle
+                  photo1</button>
+                                </div>
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo
+                  2</button>
+                                </div>
+
+                                <div class="col-lg-4 col-xl-4 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo
+                  3</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6 col-xs-12 mt-2 text-start">
+                                    <button class="btn btn-danger w-md waves-effect waves-light" type="submit">vehicle photo
+                  4</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="card col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2 ">
+                    <div class="card-body">
+                        <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Select Registration Type
+                        </h4>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                <label class="checkbox site_font_bold" for="price1">
+                <input type="radio" name="price" required="" id="price1" value="price1"> Normal 450 AED
+              </label>
+                                <br>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                <label class="checkbox site_font_bold" for="price2">
+                <input type="radio" name="price" required="" id="price2" value="price2"> Red Carpet 750 AED
+              </label>
+                                <br>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                <label class="checkbox site_font_bold" for="price3">
+                <input type="radio" name="price" required="" id="price3" value="price3"> VIP 2500 AED
+              </label>
+                                <br>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Would like to wash your car prior the event ?
+                            </h4>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="wash">
+                  <input type="radio" name="wash" required="" id="wash" value="yesWash1"> Yes (Saloon cars and below 75
+                  AED)
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="wash">
+                  <input type="radio" name="wash" required="" id="wash" value="yesWash2"> Yes (SUV Cars and above 85 AED)
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="wash">
+                  <input type="radio" name="wash" required="" id="wash" value="noWash"> No
+                </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Would like to dry wash your Car during 3 days event day ?</h4>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="dryWash">
+                  <input type="radio" name="dryWash" required="" id="dryWash" value="yesDry"> Yes (120 AED)
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="dryWash">
+                  <input type="radio" name="dryWash" required="" id="dryWash" value="noDry"> No
+                </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Do you need a caravan (RV) Parking?
+                            </h4>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="caravan">
+                  <input type="radio" name="caravan" required="" id="caravan" value="yescaravan"> Yes
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="caravan">
+                  <input type="radio" name="caravan" required="" id="caravan" value="nocaravan"> No
+                </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Would you like to walk off the plane into a hotel room with special prices?
+
+                            </h4>
+                            <p>Looking to stay near world trade Centre, Metro station or any other popular transport hubs?
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="walk">
+                  <input type="radio" name="walk" required="" id="walk" value="yesDry"> Yes
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="walk">
+                  <input type="radio" name="walk" required="" id="walk" value="noDry"> No
+                </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="card col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2 ">
+                    <div class="card-body">
+                        <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Would you like to rent a car with a special discount?
+                        </h4>
+                        <p>Hire a car from the moment you walk in to the airport or from Custom Show Emirates and start your onward journey, quick and efficient. Offer is reliable, safe vehicle rental, from budget through luxury cars
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                <label class="checkbox site_font_bold" for="rent">
+                <input type="radio" name="rent" required="" id="rent" value="yesrent"> Yes
+              </label>
+                                <br>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                <label class="checkbox site_font_bold" for="rent">
+                <input type="radio" name="rent" required="" id="rent" value="norent"> No
+              </label>
+                                <br>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">Do you need to reserve a parking space of the trailer (Al Qalusah)?</h4>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="parking">
+                  <input type="radio" name="parking" required="" id="parking" value="yesparking"> Yes
+                </label>
+                                    <br>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12  ">
+                                    <label class="checkbox site_font_bold" for="parking">
+                  <input type="radio" name="parking" required="" id="parking" value="noparking"> No
+                </label>
+                                    <br>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col-lg-5 col-xl-5 col-xs-12 col-md-12 mt-1 mx-2">
+                    <div class="card  ">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-weight: bold; font-size:18px;color:red;">In case of any emergency, please contact
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="validationCustom14">Name</label>
+                                        <input required type="text" class="form-control" id="emergencyName" placeholder="Emergency Contact">
+                                        <span id="errorEmergencyName"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="validationCustom15">Mobile Number</label>
+                                        <input required type="number" class="form-control" id="emergencyNum" placeholder="Emergency Number">
+                                        <span id="errorEmergencyNum"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-lg-6 col-xl-6 col-xs-12 col-md-12 mt-1 mx-2 ">
+                    <div class="card-body">
+                        <h4 class="card-title">Declaration Cum Undertaking</h4>
+                        <div class="row">
+                            <label>I the undersigned<input type="text" class="form-control" id="validationCustom16"
+                >Acknowledge and pledge that I will display my Vehicle
+              <input type="text" class="form-control" id="validationCustom17" 
+              >
+              ,at Custom Show Emirates from March 25, 26 & 27th ,2022. Without bearing the management any responsibility
+              of the damages that might occur, I also pledge to bear all losses that might be caused to the management
+              of Custom Show Emirates and all its contest and participant vehicle for any reason related to me or my
+              vehicle during the period of the above mentioned exhibition.</label>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="mx-2" style="color: red; font-weight: bold;">
+                I am aware of the Covid 19 Pandemic regulations and rules and will keep my face mask on. Dubai police laws are valid during the exhibition; Management will not bear any responsibilities of the individual actions.
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button class="col-lg-2 col-xs-11 col-sm-6 mx-2 my-4 btn btn-danger">signeture here</button>
+                <button class="col-lg-2 col-xs-12 col-sm-6 mx-2 my-4 btn btn-danger w-md waves-effect waves-light" type="submit" onclick="errorMessage()">save</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("toDay").innerHTML = day + " / " + month + " / " + year;
+
+
+    function errorMessage() {
+        //first name
+        var errorFullName = document.getElementById("errorFullName")
+        const validationFullName = document.getElementById("fullName");
+        if (!validationFullName.checkValidity()) {
+            errorFullName.textContent = "Please provide a valid Full Name."
+            errorFullName.style.color = "red"
+        } else {
+            errorFullName.textContent = ""
+        }
+        //id number /identity
+        var errorIdentity = document.getElementById("errorIdentity")
+        const validationIdentity = document.getElementById("identity");
+        if (!validationIdentity.checkValidity()) {
+            errorIdentity.textContent = " Please provide a valid ID Number/ Identity Doc."
+            errorIdentity.style.color = "red"
+        } else {
+            errorIdentity.textContent = ""
+        }
+        //country
+        var errorCountry = document.getElementById("errorCountry")
+        const validationCountry = document.getElementById("country");
+        if (!validationCountry.checkValidity()) {
+            errorCountry.textContent = "Please provide a valid Country."
+            errorCountry.style.color = "red"
+        } else {
+            errorCountry.textContent = ""
+        }
+        //city
+        var errorCity = document.getElementById("errorCity")
+        const validationCity = document.getElementById("city");
+        if (!validationCity.checkValidity()) {
+            errorCity.textContent = "Please provide a valid city."
+            errorCity.style.color = "red"
+        } else {
+            errorCity.textContent = ""
+        }
+
+        //mobile
+        var errorMobile = document.getElementById("errorMobile")
+        const validationMobile = document.getElementById("mobile");
+        if (!validationMobile.checkValidity()) {
+            errorMobile.textContent = "Please provide a valid Mobile Number."
+            errorMobile.style.color = "red"
+        } else {
+            errorMobile.textContent = ""
+        }
+
+        //email
+        var errorEmail = document.getElementById("errorEmail")
+        const validationEmail = document.getElementById("email");
+        if (!validationEmail.checkValidity()) {
+            errorEmail.textContent = "Please provide a valid Email."
+            errorEmail.style.color = "red"
+        } else {
+            errorEmail.textContent = ""
+        }
+
+
+        //category
+        var errorCategory = document.getElementById("errorCategory")
+        const validationCategory = document.getElementById("category");
+        if (!validationCategory.checkValidity()) {
+            errorCategory.textContent = "Please provide a valid Category."
+            errorCategory.style.color = "red"
+        } else {
+            errorCategory.textContent = ""
+        }
+
+        //model
+        var errorModel = document.getElementById("errorModel")
+        const validationModel = document.getElementById("model");
+        if (!validationModel.checkValidity()) {
+            errorModel.textContent = "Please provide a valid Model."
+            errorModel.style.color = "red"
+        } else {
+            errorModel.textContent = ""
+        }
+
+        // Manufacturing
+        var errorManufacturing = document.getElementById("errorManufacturing")
+        const validationManufacturing = document.getElementById("manufacturing");
+        if (!validationManufacturing.checkValidity()) {
+            errorManufacturing.textContent = "Please provide a valid Manufacturing year."
+            errorManufacturing.style.color = "red"
+        } else {
+            errorManufacturing.textContent = ""
+        }
+
+        // Club / workshop /Individual.
+        var errorClub = document.getElementById("errorClub")
+        const validationClub = document.getElementById("club");
+        if (!validationClub.checkValidity()) {
+            errorClub.textContent = "Please provide a valid Club / workshop /Individual."
+            errorClub.style.color = "red"
+        } else {
+            errorClub.textContent = ""
+        }
+
+        //participant note
+        var errorParticipant = document.getElementById("errorParticipant")
+        const validationParticipants = document.getElementById("participantNotes");
+        if (!validationParticipants.checkValidity()) {
+            errorParticipant.textContent = "Please provide a valid Participant Note."
+            errorParticipant.style.color = "red"
+        } else {
+            errorParticipant.textContent = ""
+        }
+
+        //Emergency Name.
+        var errorEmergencyName = document.getElementById("errorEmergencyName")
+        const validationEmergencyName = document.getElementById("emergencyName");
+        if (!validationEmergencyName.checkValidity()) {
+            errorEmergencyName.textContent = "Please provide a valid Emergency Contact."
+            errorEmergencyName.style.color = "red"
+        } else {
+            errorEmergencyName.textContent = ""
+        }
+
+        // emergency number
+        var errorEmergencyNum = document.getElementById("errorEmergencyNum")
+        const validationEmergencyNum = document.getElementById("emergencyName");
+        if (!validationEmergencyNum.checkValidity()) {
+            errorEmergencyNum.textContent = "Please provide a valid Emergency Number."
+            errorEmergencyNum.style.color = "red"
+        } else {
+            errorEmergencyNum.textContent = ""
+        }
+    }
+</script>
